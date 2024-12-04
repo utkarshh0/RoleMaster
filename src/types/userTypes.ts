@@ -3,7 +3,7 @@ export interface User{
 
     id : string,
     name : string,
-    role : 'User' | 'Moderator' | 'Admin'
+    role : string
     status : 'Active' | 'Inactive'
 }
 
