@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+# RoleMaster
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a role management system where admins can add, edit, and manage users, roles, and their statuses. Built using **React**, **Redux**, and **Tailwind CSS**, it includes input validation, modals, and state management for seamless user experience.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Add new users with their roles and statuses.
+- Edit existing user details.
+- Validate inputs for better data integrity.
+- Manage modal actions dynamically (add/edit).
+- Fully responsive design using Tailwind CSS.
+- State management with Redux.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tech Stack
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Frontend
+- **React**: For building the user interface.
+- **Redux**: For application state management.
+- **TypeScript**: For type safety and better development experience.
+- **Tailwind CSS**: For fast and responsive styling.
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Installation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/utkarshh0/RoleMaster.git
+   cd RoleMaster
+   
+
+2. Install dependencies:
+   ```bash
+   npm install
+
+
+2. Start the Development server:
+   ```bash
+   npm run dev
+
+
+Contact
+If you have any questions or feedback, feel free to contact:
+
+  - Name: Utkarsh Kataria
+  - Email: utk.arshh.9.2@gmail.com
