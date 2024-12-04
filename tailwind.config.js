@@ -9,8 +9,7 @@ export default {
     extend: {
       colors : {
           primary : 'var(--primary)',
-          textDark : 'var(--textDark)',
-          textLight : 'var(--textLight)'
+          text : 'var(--text)'
       }
     },
   },

@@ -4,13 +4,11 @@
 
 
 :root{
-    --primary : #606A6E;
-    --textDark : #2B2D30;
-    --textLight : #FBFDFD;
+    --primary : #EDEFEE;
+    --text : #5D6158;
 }
 
 .dark{
     --primary : #2C2E2E;
-    --textDark : #80888C;
-    --textLight : #FBFDFD;
+    --text : #FBFDFE;
 }
