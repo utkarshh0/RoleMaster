@@ -3,10 +3,10 @@ import { FaEdit } from "react-icons/fa"
 import { MdDelete } from "react-icons/md"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../app/store"
-import { addUser, deleteUser, updateUser } from "../features/users/userSlice"
-import { User } from "../types/userTypes"
+import { deleteUser } from "../features/users/userSlice"
+// import { User } from "../types/userTypes"
 
-let i=9
+// let i=9
 
 const Users: React.FC = () => {
     const users = useSelector((state: RootState) => state.users.users)
@@ -16,12 +16,12 @@ const Users: React.FC = () => {
     const [selectedRole, setSelectedRole] = useState<string>("All")
     const [selectedStatus, setSelectedStatus] = useState<string>("All")
     const [searchTerm, setSearchTerm] = useState<string>("")
-    const [modalAction, setModalAction] = useState<'add' | 'edit'>('add');
-    const [formData, setFormData] = useState({
-        name : '',
-        role : 'User',
-        status : 'Active'
-    })
+    // const [modalAction, setModalAction] = useState<'add' | 'edit'>('add');
+    // const [formData, setFormData] = useState({
+    //     name : '',
+    //     role : 'User',
+    //     status : 'Active'
+    // })
 
     const filteredUsers = users.filter((user) => {
         const roleMatch = selectedRole === "All" || user.role === selectedRole
@@ -39,49 +39,49 @@ const Users: React.FC = () => {
         dispatch(deleteUser(userId))
     }
 
-    const handleSaveRole = () => {
-        if (modalAction === 'add') {
-            dispatch(addUser({ id: `${i++}`, name: formData.name, role : formData.role, status : formData.status }));
-        } else if (modalAction === 'edit' && selectedRole) {
-            dispatch(updateUser({ ...users["3"], name: roleName, permissions }));
-        }
-        closeModal();
-        resetForm();
-    };
+    // const handleSaveRole = () => {
+    //     if (modalAction === 'add') {
+    //         dispatch(addUser({ id: `${i++}`, name: formData.name, role : formData.role, status : formData.status }));
+    //     } else if (modalAction === 'edit' && selectedRole) {
+    //         dispatch(updateUser({ ...users["3"], name: roleName, permissions }));
+    //     }
+    //     closeModal();
+    //     resetForm();
+    // };
 
-    const resetForm = () => {
-        setRoleName('');
-        setPermissions([]);
-        setSelectedRole(null);
-    };
+    // const resetForm = () => {
+    //     setRoleName('');
+    //     setPermissions([]);
+    //     setSelectedRole(null);
+    // };
 
-    const openEditModal = (role: Role) => {
-        setSelectedRole(role);
-        setRoleName(role.name);
-        setPermissions(role.permissions);
-        setModalAction('edit');
-        openModal();
-    };
+    // const openEditModal = (role: Role) => {
+    //     setSelectedRole(role);
+    //     setRoleName(role.name);
+    //     setPermissions(role.permissions);
+    //     setModalAction('edit');
+    //     openModal();
+    // };
 
-    const openAddModal = () => {
-        setModalAction('add');
-        openModal();
-    };
+    // const openAddModal = () => {
+    //     setModalAction('add');
+    //     openModal();
+    // };
 
-    const modalRef = useRef<HTMLDialogElement>(null);
+    // const modalRef = useRef<HTMLDialogElement>(null);
 
-    const openModal = () => {
-        if (modalRef.current) {
-            modalRef.current.showModal();
-        }
-    };
+    // const openModal = () => {
+    //     if (modalRef.current) {
+    //         modalRef.current.showModal();
+    //     }
+    // };
 
-    const closeModal = () => {
-        resetForm()
-        if (modalRef.current) {
-            modalRef.current.close();
-        }
-    };
+    // const closeModal = () => {
+    //     resetForm()
+    //     if (modalRef.current) {
+    //         modalRef.current.close();
+    //     }
+    // };
 
     return ( 
         <>
@@ -178,7 +178,7 @@ const Users: React.FC = () => {
                     </table>
                 </div>
             </div>
-            <dialog ref={modalRef} className="p-6 rounded-md w-4/5 md:w-2/5">
+            {/* <dialog ref={modalRef} className="p-6 rounded-md w-4/5 md:w-2/5">
                 <p className="text-2xl text-text text-center font-bold mb-4">
                     {modalAction === 'add' ? 'Add User' : 'Edit User'}
                 </p>
@@ -235,7 +235,7 @@ const Users: React.FC = () => {
                         Cancel
                     </button>
                 </div>
-            </dialog>
+            </dialog> */}
 
         </>
         
